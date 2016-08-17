@@ -6,4 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/display/:message', function(req, res, next) {
+  var message = req.params.message;
+  console.log(message);
+  res.render('index', { title: message });
+});
+
 module.exports = router;
